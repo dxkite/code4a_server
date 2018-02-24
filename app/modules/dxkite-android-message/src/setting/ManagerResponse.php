@@ -23,17 +23,21 @@ class ManagerResponse extends \dxkite\support\setting\Response
                 $this->refresh();
                 return false;
             } elseif (request()->get()->action == 'image') {
-                Message::editAds(
-                    File::createFromPost('image'),
-                    request()->post('add_url','http://code4a.atd3.cn')
-                );
+                if (request()->post('add_url')) {
+                    Message::editAdUrl(request()->post('add_url', 'http://code4a.atd3.cn'));
+                }
+                $file=request()->files('image') ;
+                if ($file && $file['error']==0) {
+                    $file=File::createFromPost('image');
+                    Message::editAdImage($file);
+                }
             }
         }
         $message = setting('androidMessage');
         if ($message) {
             $view->set('message', $message);
         }
-        $ads = setting('android-ads');
+        $ads = setting('android-ads-url');
         if ($ads) {
             $view->set('ads', $ads);
         }

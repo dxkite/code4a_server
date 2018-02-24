@@ -33,6 +33,10 @@ class ManagerResponse extends \dxkite\support\setting\Response
         if ($message) {
             $view->set('message', $message);
         }
+        $ads = setting('android-ads');
+        if ($ads) {
+            $view->set('ads', $ads);
+        }
         $view->set('show', setting('androidMessageEnable'));
         return true;
     }

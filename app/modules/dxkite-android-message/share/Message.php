@@ -18,7 +18,7 @@ class Message extends ProxyObject
 
     public static function pullAd()
     {
-        return setting('androidAds', false);
+        return setting('android-ads', false);
     }
 
     public static function editPull(string $message, int $time=10000, string $url=null, string $color='#222222', string $bgColor='#EEEEEE')
@@ -37,7 +37,7 @@ class Message extends ProxyObject
 
     public static function editAds(File $image, string $url)
     {
-        if ($old=setting('androidAds')) {
+        if ($old=setting('android-ads')) {
             if (isset($old['imageId'])) {
                 Media::delete($old['imageId']);
             }
@@ -49,7 +49,7 @@ class Message extends ProxyObject
                 'imageId'=> $upload->getId(),
                 'url'=>$url,
             ];
-            return setting_set('androidAds', $ads);
+            return setting_set('android-ads', $ads);
         }
         return false;
     }

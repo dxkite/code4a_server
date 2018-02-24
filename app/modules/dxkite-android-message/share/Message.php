@@ -44,7 +44,7 @@ class Message extends ProxyObject
     {
         $upload=Media::saveFile($image);
         if ($old=setting('android-ads-image')) {
-            if ($upload->getId()>0 && isset($old['imageId'])) {
+            if (isset($old['imageId'])) {
                 Media::delete($old['imageId']);
             }
         }

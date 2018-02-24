@@ -38,8 +38,12 @@ class ManagerResponse extends \dxkite\support\setting\Response
             $view->set('message', $message);
         }
         $ads = setting('android-ads-url');
+        $image = setting('android-ads-image');
         if ($ads) {
             $view->set('ads', $ads);
+        }
+        if ($image) {
+            $view->set('image', $image);
         }
         $view->set('show', setting('androidMessageEnable'));
         return true;

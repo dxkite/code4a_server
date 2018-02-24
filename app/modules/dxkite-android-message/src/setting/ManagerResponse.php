@@ -25,7 +25,7 @@ class ManagerResponse extends \dxkite\support\setting\Response
             } elseif (request()->get()->action == 'image') {
                 Message::editAds(
                     File::createFromPost('image'),
-                    request()->post('url')
+                    request()->post('add_url','http://code4a.atd3.cn')
                 );
             }
         }

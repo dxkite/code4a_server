@@ -70,11 +70,11 @@ class Message extends ProxyObject
 
     public static function update() {
         return  [
-            'icon'=>'http://code4a.atd3.cn/icon',
+            'icon'=>'https://github.com/TTHHR/code4a/raw/master/docs/assets/code4a.svg',
             'name'=>'Code4A',
             'version'=>'1.0.0-beta',
             'versionInfo'=>'添加了用户更新',
-            'download'=>'https://github.com/TTHHR/code4a/releases/tag/v1.0.0-beta'
+            'download'=>'https://github.com/TTHHR/code4a/releases/download/v1.0.0-beta/cn.atd3.code4a_1.0.0-beta.apk'
         ];
     }
 }

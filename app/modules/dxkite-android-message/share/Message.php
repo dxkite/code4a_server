@@ -67,4 +67,14 @@ class Message extends ProxyObject
     {
         return setting_set('androidMessageEnable', $enable);
     }
+
+    public static function update() {
+        return  [
+            'icon'=>'http://code4a.atd3.cn/icon',
+            'name'=>'Code4A',
+            'version'=>'1.0.0-beta',
+            'versionInfo'=>'添加了用户更新',
+            'download'=>'https://github.com/TTHHR/code4a/releases/tag/v1.0.0-beta'
+        ];
+    }
 }

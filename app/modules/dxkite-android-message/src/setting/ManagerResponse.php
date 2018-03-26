@@ -31,6 +31,19 @@ class ManagerResponse extends \dxkite\support\setting\Response
                     $file=File::createFromPost('image');
                     Message::editAdImage($file);
                 }
+            } elseif (request()->get()->action == 'update') {
+                $file=request()->files('icon') ;
+                if ($file && $file['error']==0) {
+                    $file=File::createFromPost('icon');
+                    Message::editAppIcon($file);
+                }
+                $update = request()->post('update');
+                Message::editAppInfo(
+                    $update['name'],
+                    $update['version'],
+                    $update['versionInfo'],
+                    $update['download']
+                );
             }
         }
         $message = setting('androidMessage');
@@ -44,6 +57,10 @@ class ManagerResponse extends \dxkite\support\setting\Response
         }
         if ($image) {
             $view->set('image', $image);
+        }
+        $update = setting('android-app-update');
+        if ($update) {
+            $view->set('update', $update);
         }
         $view->set('show', setting('androidMessageEnable'));
         return true;

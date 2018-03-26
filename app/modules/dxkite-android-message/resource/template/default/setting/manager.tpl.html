@@ -55,3 +55,35 @@
     </div>
     <button type="submit" class="btn btn-primary">设置</button>
 </form>
+
+<h4 class="mt-2">{= 版本更新推送 }</h4>
+<form action="@self(['action'=>'update'])" method="POST" enctype="multipart/form-data">
+    <div class="form-group row">
+        <label for="image" class="col-sm-2 col-form-label">展示图片({{$:update.imageId(0)}})</label>
+        <div class="col-sm-10">
+            <input type="file" class="form-control-file" id="image" name="icon">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="url" class="col-sm-2 col-form-label">版本信息</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="update[name]" id="url" placeholder="name" value="{{$:update.name('Code4A')}}" required>
+        </div>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="update[version]" id="url" placeholder="version" value="{{$:update.version('1.0.0-beta')}}" aria-required="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="versionInfo" class="col-sm-2 col-form-label">更新信息</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" name="update[versionInfo]" id="versionInfo" rows="3" placeholder="更新信息">{{$:update.versionInfo('')}}</textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="url" class="col-sm-2 col-form-label">下载URL</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="update[download]" id="url" placeholder="URL" value="{{$:update.download('')}}" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">设置</button>
+</form>

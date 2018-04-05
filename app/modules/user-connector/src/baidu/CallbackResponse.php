@@ -12,10 +12,10 @@ class CallbackResponse extends Response
         if ($code=request()->get()->code) {
             if (visitor()->isGuest()) {
                 $user=Baidu::signin($code);
-                var_dump($user);
+                $this->page('user-connector:baidu/check-ok')->render();
             }else{
                 $user=Baidu::signin($code,true);
-                var_dump($user);
+                $this->page('user-connector:baidu/check-ok')->render();
             }
         } else {
             if (visitor()->isGuest()) {

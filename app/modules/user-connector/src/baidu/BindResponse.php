@@ -16,7 +16,7 @@ class BindResponse extends VisitorResponse {
                 $exist=table('baidu_user')->select(['id','user','uid'], ['uid'=>$userInfo['uid']])->fetch();
                 if ($exist) {
                     visitor()->signin($exist['user']);
-                    echo '登陆成功 ' . $exist['user'];
+                    $this->page('user-connector:baidu/check-ok')->render();
                 }
                 return;
             }

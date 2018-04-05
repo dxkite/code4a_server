@@ -1,0 +1,14 @@
+{
+    "baidu-callback": {
+        "class": "dxkite\\userconnector\\response\\baidu\\CallbackResponse",
+        "visit": "\/baidu\/checked"
+    },
+    "baidu-signin": {
+        "class": "dxkite\\userconnector\\response\\baidu\\SigninResponse",
+        "visit": "\/baidu\/signin"
+    },
+    "baidu-bind": {
+        "class": "dxkite\\userconnector\\response\\baidu\\BindResponse",
+        "visit": "\/baidu\/bind"
+    }
+}

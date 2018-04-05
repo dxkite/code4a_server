@@ -1,0 +1,35 @@
+{
+    "name": "dxkite\/user-connector",
+    "homepage": "http:\/\/atd3.cn",
+    "version": "1.0.0",
+    "locale": "zh-CN",
+    "namespace": "cn\\atd3",
+    "discription": "Oauth2 连接服务",
+    "table": {
+        "baidu_user": "dxkite.userconnector.table.BaiduOauth2Table",
+        "oauth2_rename": "dxkite.userconnector.table.RenameTable"
+    },
+    "proxy": {},
+    "api-proxy": {
+
+    },
+    "import": {
+        "share": {
+            "dxkite\\userconnector": "share"
+        },
+        "src": {
+            "dxkite\\userconnector\\response": "src"
+        }
+    },
+    "prefix": {
+        "simple": "/user-connector"
+    },
+    "require": {
+        "user": "*",
+        "support": "*"
+    },
+    "authors": [{
+        "name": "dxkite",
+        "email": "dxkite@qq.com"
+    }]
+}

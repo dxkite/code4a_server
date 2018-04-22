@@ -1,2 +1,17 @@
 <h4>{= 统计信息}</h4>
-{{ $:collection['device'] }}
+<table class="table">
+    <thead>
+        <tr>
+            <th>{= 安装次数 }</th>
+            <th>{= 启动次数}</th>
+            <th>{= IP统计}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ $:collection['device']??0 }}</td>
+            <td>{{ $:collection['boot']??0 }}</td>
+            <td>{{ $:collection['ipTimes']??0 }}</td>
+        </tr>
+    </tbody>
+</table>

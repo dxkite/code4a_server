@@ -1,0 +1,3 @@
+{
+    "setting-index-panel:after": ["dxkite.android.collection.hook.Setting::infoPanel"]
+}
